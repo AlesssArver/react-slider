@@ -1,0 +1,59 @@
+@import "~reset-css"
+
+@import './_fonts'
+
+body 
+    background: #0F0449
+
+.main__wrapper
+    display: flex
+
+.content
+    margin-top: 50px
+    width: 480px
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+    &__title
+        margin-bottom: 15px
+        font-size: 50px
+        font-family: 'Playfair Display Black'
+        color: #fff
+
+    &__description
+        margin-bottom: 35px
+        font-size: 16px
+        font-family: 'Gotham Book'
+        color: #DBDBF0
+        line-height: 20px
+
+    &__wrapper
+        transition: all 0.3s ease
+        opacity: 0
+
+        &__active
+            opacity: 100
+        
+
+.count
+    width: 80px
+    height: 35px
+    display: flex
+    justify-content: center
+    align-items: center
+    background: #F1F1F9
+    border-radius: 5px
+
+.no--avatar
+    width: 35px
+    height: 35px
+    background: #F1F1F9
+    border-radius: 40px
+
+.flex
+    display: flex
+    align-items: center
+
+.text__upercase
+    text-transform: uppercase
