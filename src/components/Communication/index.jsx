@@ -4,6 +4,7 @@ import cn from "classnames";
 import "./index.sass";
 
 import { Panel, Card, Button } from "components";
+import Event from './Event'
 
 const masks = [
     {id: 1, avatar: null, name: 'Aden', surname: 'Walker', count: 3, created_at: '5/2/20 - 10:15AM'},
@@ -21,7 +22,8 @@ const Communication = ({ currentSlide }) => {
 of emergency.
         </div>
         <Card title="Announcements">
-            <Button backgroundColor='#0F0449' uppercase>begin health check</Button>
+            <Button className='communication--button' backgroundColor='#0F0449' uppercase>begin health check</Button>
+            <Event/>
         </Card>
       </div>
     </div>

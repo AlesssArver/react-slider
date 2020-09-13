@@ -13,9 +13,15 @@ const masks = [
 
 const Event = () => {
   return (
-    <div className="event">
-        
-    </div>
+    <Panel className="event">
+        <div className="event__header">
+          <div className="event__date">March 8, 2020</div>
+          <div className="event__point"></div>
+        </div>
+        <div className="event__content">
+          <div className="event__title">Prevent spread of COVID19</div>
+        </div>
+    </Panel>
   );
 };
 

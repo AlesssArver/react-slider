@@ -1,0 +1,64 @@
+.navbar
+
+    &__item
+        margin: 10px 0
+        width: 347px
+        display: flex
+        justify-content: flex-end
+        align-items: center
+        font-family: 'Playfair Display Black'
+        color: #fff
+        font-size: 18px
+        font-weight: 900
+        text-align: right
+        cursor: pointer
+
+
+        &__text
+            margin-right: 20px
+
+        &__active .navbar__icon
+            filter: invert(64%) sepia(72%) saturate(6653%) hue-rotate(334deg) brightness(97%) contrast(95%)
+
+            &__wrapper
+                background: #FFF
+                border: none
+
+                &__spin 
+                    position: relative
+                
+                &__spin::after
+                    content: ''
+                    animation: borderAnimation 5s linear
+
+    &__icon
+        filter: invert(0%) sepia(2%) saturate(331%) hue-rotate(349deg) brightness(116%) contrast(100%)
+        &__wrapper
+            width: 57px
+            height: 57px
+            display: flex
+            justify-content: center
+            align-items: center
+            position: relative
+            border: 2px solid #5C5C8A
+            border-radius: 50px
+            transition: all 3s ease
+
+
+@keyframes borderAnimation
+    0%           
+        width: 100%
+        height: 100%
+        position: absolute
+        border: 2px solid #F20D59
+        border-color: #F20D59 transparent transparent transparent
+        border-radius: 50px
+    100%
+        width: 100%
+        height: 100%
+        position: absolute
+        border: 2px solid #F20D59
+        border-color: #F20D59 transparent transparent
+        border-radius: 50px
+        transform: rotate(360deg)
+        border-color: #F20D59

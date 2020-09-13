@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Route, NavLink } from 'react-router-dom'
+import cn from 'classnames'
 
 import { Navbar, Capacity, Schedule, Management, Communication } from 'components'
 
@@ -7,6 +8,8 @@ import CapacityIcon from 'assets/images/icons/capacity.svg'
 import ScheduleIcon from 'assets/images/icons/schedule.svg'
 import ManagementIcon from 'assets/images/icons/management.svg'
 import CommunicationIcon from 'assets/images/icons/communication.svg'
+import Shape2 from 'assets/images/shape2.svg'
+import DotRounded from 'assets/images/dotRounded.svg'
 
 const navbarItems = [
   { id: 1, text: 'Capacity planning', icon: CapacityIcon, func: 'setOpenCapacity' },
@@ -30,22 +33,24 @@ function App() {
     <div className="main__wrapper">
       <div className='navbar__wrapper'>
         <div className='navbar'>
-          {navbarItems.map(n => <div className='navbar__item'>
-            <div className='navbar__item__text'>{n.text}</div>
-            <div className='navbar__icon'>
-              <img src={n.icon} alt={`icon for ${n.text}`} />
+          {navbarItems.map((value, index) => <div className={cn('navbar__item', { navbar__item__active: index === currentSlide })}>
+            <div className='navbar__item__text'>{value.text}</div>
+            <div className='navbar__icon__wrapper navbar__icon__wrapper__spin'>
+              <img className='navbar__icon' src={value.icon} alt={`icon for ${value.text}`} />
             </div>
           </div>)}
         </div>
       </div>
-      {currentSlide === 0 && <Capacity currentSlide={currentSlide} />}
-      {currentSlide === 1 && <Schedule currentSlide={currentSlide} />}
-      {currentSlide === 2 && <Management currentSlide={currentSlide} />}
-      {currentSlide === 3 && <Communication currentSlide={currentSlide} />}
-      {/* <Route path='/capacity' render={() => <Capacity />} /> */}
-      {/* <Route path='/schedule' render={() => <Schedule />} /> */}
-      {/* <Route path='/management' render={() => <Management />} />
-      <Route path='/communication' render={() => <Communication />} /> */}
+      <div style={{ position: 'relative' }}>
+        <div className='slider__wrapper'>
+          <Capacity currentSlide={currentSlide} />
+          <Schedule currentSlide={currentSlide} />
+          <Management currentSlide={currentSlide} />
+          <Communication currentSlide={currentSlide} />
+        </div>
+        <img className='shape2' src={Shape2} />
+        <img className={cn({ 'dot-rounded__1': currentSlide === 0 || currentSlide === 2, 'dot-rounded__2': currentSlide === 1 || currentSlide === 3 })} src={DotRounded} />
+      </div>
     </div>
   );
 }

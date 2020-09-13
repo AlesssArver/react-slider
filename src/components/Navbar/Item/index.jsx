@@ -2,8 +2,6 @@ import React from 'react'
 
 import { NavLink } from 'react-router-dom'
 
-import './index.sass'
-
 const Item = ({ text, icon, path }) => {
     return (
         <NavLink to={path} className='navbar__item'>
